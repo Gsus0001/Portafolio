@@ -1,0 +1,89 @@
+/*Defiendo variables de color en css*/
+:root{
+    --body-bg-color: rgb(43,43,70);
+    --text-color: white;
+    --colorh1-color: rgb(215,211,211);
+}
+/*Aplicando variable creada en root al body de muestra web*/
+/*Reemplazee el body con el uso de variables css*/
+body{
+    background: var(--body-bg-color);
+    color: var(--text-color);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1, h2{
+    color:var(--colorh1-color);
+}
+.titulo{
+    font-style: italic;/*tipo de cursiva*/
+    font-weight: bolder;/*establece la negrita*/
+    font-size: 2.5rem;/*tamaño de la fuente*/
+    text-transform: capitalize;/*Convierte todas las letras en Mayuscula-minuscula-inicio de cada palabra en Mayuscula*/
+    text-shadow: 2px 2px 1px red, 1px 1px 1px black;/*sombra del texto*/
+    text-align: center;/*centrado  del texto*/
+    line-height: 2;
+    }
+
+.navigation{
+    display: flex;
+    gap: 3rem;
+    justify-content: flex-end;
+    margin: 0 3rem;
+    list-style: none;
+}
+.navigation li{
+    font-size: 1rem;
+    width: 90px;
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background: #f0f0f0;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+    font-style: italic;
+    font-weight: 500;
+}
+a{
+    text-decoration: none;
+    color: black;
+    }
+
+.sobremi{
+    display: flex;
+    justify-content: center;
+}
+.container-sobremi{
+    display: flex;
+    width: 50%;/*ancho*/
+    padding: 2rem;
+    margin-top: 5rem;/*margen a lo alto*/
+    line-height: 2.5rem;/*espacio entre los parrafos del texto*/
+    font-size: large;/*tamaño de la fuente*/
+    color: #f0f0f0;
+    gap: 5rem;
+    align-items: center;
+}
+.img-perfil{
+    border-radius: 50%;
+}
+/* Celulares (Pantallas pequeñas,  hasta 767px)*/
+@media (max-width: 767px){
+    .titulo{
+        justify-content: center;
+    }
+    .navigation{
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    .container-sobremi{
+        width: 100%;
+        padding: 1;
+        margin-top: 1rem;
+        line-height: 2.5rem;
+        font-size: small;
+        flex-direction: column;
+    }
+}
+
+/*Tablet (Pantallas)
