@@ -66,8 +66,22 @@ a{
 .img-perfil{
     border-radius: 50%;
 }
-/* Celulares (Pantallas pequeñas,  hasta 767px)*/
-@media (max-width: 767px){
+.experiencia, .estudios{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    color: azure;
+}
+.container-experiencia, .container-estudios{
+    width: 100%;
+    padding: 2rem;
+    margin-top: 5rem;
+    line-height: 2rem;
+    margin: 8rem;
+}
+
+/* Celulares (Pantallas pequeñas,  hasta 768px)*/
+@media (max-width: 768px){
     .titulo{
         justify-content: center;
     }
@@ -79,11 +93,52 @@ a{
     .container-sobremi{
         width: 100%;
         padding: 1;
-        margin-top: 1rem;
-        line-height: 2.5rem;
-        font-size: small;
+        margin-top: 1rem; /*margen a lo alto*/
+        line-height: 2.5rem; /*espaciado entre los parrafos del texto*/
+        font-size: small; /*tamaño de la fuene*/
         flex-direction: column;
+    }
+    .container-estudios, .container-experiencia{
+        width: 100%;
+        margin: 0rem;
+    }
+    .experiencia, .estudios{
+        width: 100%;
+        padding: 1rem;
+        margin-top: 1rem;
+        font-size: small;
     }
 }
 
-/*Tablet (Pantallas)
+/*Tablet (Pantallas medianas, entre 768px y 1023px)*/
+@media (min-width: 768px) and (max-width: 1023px){
+    .titulo{
+        justify-content: center;
+    }
+    .navigation{
+        gap: 2rem;
+        justify-content: center;
+    }
+    /*Agregamos el responsivo de las secciones esperiencia y estudios */
+    .experiencia, .estudios{
+        width: 75%;
+    }
+}
+
+/*Escritorio (Patanllas anchas, 1024px y superiores) */
+@media (min-width: 1023px) {
+    .titulo{
+        justify-content: flex-start;
+    }
+    .navigation{
+        gap: 3rem;
+        justify-content: flex-end;
+        margin: 0 3rem;
+    }
+/*Agregamos el responsivo de las secciones esperiencia y estudios */
+    .experiencia, .estudios{
+        width: 75%;
+    }
+
+    
+}
