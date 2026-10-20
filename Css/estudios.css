@@ -1,0 +1,49 @@
+.estudios{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    color: azure;
+}
+.container-estudios{
+    width: 100%;
+    padding: 2rem;
+    margin-top: 5rem;
+    line-height: 2rem;
+    margin: 8rem;
+}
+
+/* Celulares (Pantallas pequeñas,  hasta 768px)*/
+@media (max-width: 768px){
+    .container-estudios{
+        width: 100%;
+        margin: 0rem;
+    }
+    .estudios{
+        width: 100%;
+        padding: 1rem;
+        margin-top: 1rem;
+        font-size: small;
+    }
+}
+
+/*Tablet (Pantallas medianas, entre 768px y 1023px)*/
+@media (min-width: 768px) and (max-width: 1023px){
+    .estudios{
+        width: 75%;
+    }
+}
+
+/*Escritorio (Patanllas anchas, 1024px y superiores) */
+@media (min-width: 1024px) {
+    .estudios{
+        width: 75%;
+    }
+    .container-estudios-section{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        gap: 2rem;
+    }
+
+    
+}

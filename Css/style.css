@@ -1,12 +1,15 @@
 /*Defiendo variables de color en css*/
-:root{
+:root {
     --body-bg-color: rgb(43,43,70);
     --text-color: white;
     --colorh1-color: rgb(215,211,211);
+    --fondo-proyectos: rgb(60,43,70);
 }
 /*Aplicando variable creada en root al body de muestra web*/
 /*Reemplazee el body con el uso de variables css*/
-body{
+body {
+    display: flex;
+    flex-direction: column;
     background: var(--body-bg-color);
     color: var(--text-color);
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -46,38 +49,11 @@ h1, h2{
 a{
     text-decoration: none;
     color: black;
-    }
+}
 
-.sobremi{
+.main-container{
     display: flex;
-    justify-content: center;
-}
-.container-sobremi{
-    display: flex;
-    width: 50%;/*ancho*/
-    padding: 2rem;
-    margin-top: 5rem;/*margen a lo alto*/
-    line-height: 2.5rem;/*espacio entre los parrafos del texto*/
-    font-size: large;/*tamaño de la fuente*/
-    color: #f0f0f0;
-    gap: 5rem;
-    align-items: center;
-}
-.img-perfil{
-    border-radius: 50%;
-}
-.experiencia, .estudios{
-    display: flex;
-    justify-content: center;
-    padding: 1rem;
-    color: azure;
-}
-.container-experiencia, .container-estudios{
-    width: 100%;
-    padding: 2rem;
-    margin-top: 5rem;
-    line-height: 2rem;
-    margin: 8rem;
+    flex-direction: column;
 }
 
 /* Celulares (Pantallas pequeñas,  hasta 768px)*/
@@ -90,25 +66,7 @@ a{
         gap: 1rem;
         align-items: center;
     }
-    .container-sobremi{
-        width: 100%;
-        padding: 1;
-        margin-top: 1rem; /*margen a lo alto*/
-        line-height: 2.5rem; /*espaciado entre los parrafos del texto*/
-        font-size: small; /*tamaño de la fuene*/
-        flex-direction: column;
     }
-    .container-estudios, .container-experiencia{
-        width: 100%;
-        margin: 0rem;
-    }
-    .experiencia, .estudios{
-        width: 100%;
-        padding: 1rem;
-        margin-top: 1rem;
-        font-size: small;
-    }
-}
 
 /*Tablet (Pantallas medianas, entre 768px y 1023px)*/
 @media (min-width: 768px) and (max-width: 1023px){
@@ -120,9 +78,7 @@ a{
         justify-content: center;
     }
     /*Agregamos el responsivo de las secciones esperiencia y estudios */
-    .experiencia, .estudios{
-        width: 75%;
-    }
+    
 }
 
 /*Escritorio (Patanllas anchas, 1024px y superiores) */
@@ -136,9 +92,5 @@ a{
         margin: 0 3rem;
     }
 /*Agregamos el responsivo de las secciones esperiencia y estudios */
-    .experiencia, .estudios{
-        width: 75%;
-    }
-
-    
+        
 }

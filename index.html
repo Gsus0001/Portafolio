@@ -1,21 +1,25 @@
-<!-- En este documento voy a crear el portafolio , documentando todo lo escrito al momento de que se quiera que se prensente-->
-
 <!DOCTYPE html>
+<!-- En este documento voy a crear el portafolio , documentando todo lo escrito al momento de que se quiera que se prensente-->
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <!-- Se especifica el idioma del contenido del documento-->
     <meta http-equiv="content-lenguage" content="es">
-    <meta name "viewport" content="width-device-width, initial-scale=1.0">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
 
      <!--Agregamos dos etiquetas meta para el sep de la clase anterior mas otra etiqueta meta la del author-->
-    <meta name="description"
+    <meta name="description" 
         content="Nombre del alumno">
     <meta name="keywords" content="portafolio, desarrollador web, [programador], proyectos, contacto">
-    <meta name="author" content="Perez Jesus David"
+    <meta name="author" content="Perez Jesus David">
     <title>Portafolio Web</title>
     <link rel="stylesheet" href="./Css/style.css">
+    <link rel="stylesheet" href="./Css/sobremi.css">
+    <link rel="stylesheet" href="./Css/experiencia.css">
+    <link rel="stylesheet" href="./Css/estudios.css">
+    <link rel="stylesheet" href="./Css/proyecto.css">
+    
 </head>
 
 <body>
@@ -28,24 +32,24 @@
                 <li><a href="#experiencia">Experiencia</a></li>
                 <li><a href="#estudios">Mis Estudios</a></li>
                 <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#contacto">Cantacto</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
-    <main>
+    <main class="main-container">
         <!--Sobre Mi-->
-        <section class="sobremi">
+        <section id="sobremi" class="sobremi">
             <article class="container-sobremi">
-                <img class="img-perfil" src="./Assets/WhatsApp Image 2026-03-16 at 21.03.05.jpeg" alt="fotografia de Jesus David Perez" width="200" height="200">
+                <img class="img-perfil" src="./Assets/Yo.jpeg" alt="fotografia de Jesus David Perez" width="200" height="200">
                 <h2>
-                    Soy <b>Tecnico Universitario en Programacion</b>, actualmente cursando en la Universidad Tecnoliógica Nacional (UTN) - FRSR, Argentina.
+                    <b>Tecnico Universitario en Programacion</b>, actualmente cursando en la Universidad Tecnoliógica Nacional (UTN) - FRSR, Argentina.
                     Me apaciona programar y desarrollar, soluciones de aplicaciones web originales y personalizadas; ademas de investigar e probar sistemas opertarivos.
                     Ademas estoy estudiando <b>Diplomatura en Ciberseguridad</b>, en la Universidad Tecnoliógica Nacional (UTN) - FRSR, Argentina, y de titulo secundario soy <b>Tecnico Electromecanico</b>, egresado de la secundaria Ejercito de los Andes 4-117 (Enet 1)
                 </h2>
 
             </article>
         </section>
-        <section id="Experiencia" class="experiencia">
+        <section id="experiencia" class="experiencia">
             <article class="container-experiencia">
                 <h2>Experiencia Laborales</h2>
                 <h3>Empresa: Tassaroli S.A.</h3>
@@ -64,17 +68,21 @@
 
             </article>
         </section>
-        <section id="Estudios" class="estudios">
+        <section id="estudios" class="estudios">
             <article class="container-estudios">
                 <h2>Mis Estudios</h2>
 
-                <h4>Diplomatura en Ciberseguridad</h4>
+                <h4>Diplomatura en Ciberseguridad y Analisis Forence</h4>
                 <p>Universidad Tecnoliógica Nacional - Facultad Regional San Rafael</p>
                 <p>Agosto 2026 - Cursando</p>
                 
                 <h4>Tecnicatura en Programación</h4>
                 <p>Universidad Tecnoliógica Nacional - Facultad Regional San Rafael</p>
                 <p>Marzo 2026 - Cursando</p>
+
+                <h4>Diplomatura en Administrador de Servidores</h4>
+                <p>Universidad Tecnoliógica Nacional - Facultad Regional Delta</p>
+                <p>Marzo 2026 - Pendiente</p>
 
                 <h4>Soldador Avanzado (RES. CFE N°108/10 Anexo 17)</h4>
                 <p>Centro de Formación, Carlos Jose Tassaroli</p>
@@ -85,21 +93,23 @@
                 <p>Marzo 2018 - Diciembre 2023</p>
             </article>
         </section>
+
+        <section id="proyectos" class="proyectos">
+            <h2>Proyectos</h2>
+            <div class="galeria-proyectos">
+                <div class="proyecto">
+                    <img src="./assets/proyecto1.jpg" alt="Foto del proyecto 1">
+                    <h3>Gestor de Invetario</h3>
+                    <p>
+                        Es un sistema de gestion de invetarios con funcionalidades de Qr, Lector de Codigo de Barras; el backend esta ejecutado en Go, con base de datos en MySQL levantado en Doker, y FronEnd en HTML y Java Scrip
+                    </p>
+                    <a href="#">Ver más</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">Tecnoliógias</a>
+                </div>
+            </div>
+        </section>
     </main>
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </html>
