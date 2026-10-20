@@ -1,0 +1,32 @@
+.contacto { 
+    margin-top: 5rem auto 0 auto;
+    padding: 1rem;
+    background-color: var(--fondo-contacto);
+    text-align: center;
+    width: 90%;
+}
+
+.contacto h2 {
+    margin-top: 1rem;
+}
+
+.iframe{
+    border: none;
+    width: 640px;
+    height: 1350px;
+    overflow: hidden;
+    border-radius: 8px;
+    mask-border: 0;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+@media (max-width: 767px) {
+    .contacto{
+        width: 95%;
+        padding: 0.5rem;
+        }
+    .contacto iframe{
+        height: 1050px;
+    }
+}
