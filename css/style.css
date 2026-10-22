@@ -148,7 +148,7 @@ h1, h2{
     text-align: center;/*centrado del texto*/
     margin: 0;
     line-height: 1.2;
-    /*Degradado en el texto para darle un toque moderno*/
+    /*Degradado en el texto*/
     background: linear-gradient(90deg, var(--colorh1-color) 0%, var(--acento) 100%);
     -webkit-background-clip: text;
     background-clip: text;

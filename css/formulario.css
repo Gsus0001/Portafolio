@@ -1,0 +1,255 @@
+/* ===== Formulario de contacto con estilo terminal ===== */
+
+/*Neutraliza el panel claro que usaba el iframe de Google*/
+.contacto .formulario-contacto{
+    display: block;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/*Ventana de terminal*/
+.terminal-contacto{
+    width: min(100%, 760px);
+    margin: 0 auto;
+    overflow: hidden;
+    font-family: "Consolas", "Courier New", monospace;
+    background-color: #0b0f14;
+    border: 1px solid rgba(78, 224, 107, 0.35);
+    border-radius: 10px;
+    box-shadow: 0 15px 40px var(--sombra), 0 0 24px rgba(78, 224, 107, 0.12);
+}
+
+/*Barra superior tipo consola*/
+.terminal-barra{
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 0.9rem;
+    background-color: #161b22;
+    border-bottom: 1px solid rgba(78, 224, 107, 0.2);
+}
+.terminal-punto{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.punto-rojo{
+    background-color: #ff5f56;
+}
+.punto-amarillo{
+    background-color: #ffbd2e;
+}
+.punto-verde{
+    background-color: #27c93f;
+}
+.terminal-titulo{
+    margin-left: 0.5rem;
+    font-size: 0.75rem;
+    color: #8b949e;
+}
+
+/*Encabezado del formulario*/
+.terminal-contacto .contact-header{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 1.25rem 1.5rem 0.25rem;
+}
+.terminal-contacto .logo{
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    width: 56px;
+    height: auto;
+    padding: 3px;
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+.terminal-contacto .contact-title{
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #4ee077;
+}
+.terminal-contacto .contact-title::before{
+    content: "$ ";
+    opacity: 0.6;
+}
+.terminal-contacto .contact-subtitle{
+    max-width: 85%;
+    margin: 0;
+    font-size: 0.82rem;
+    color: #8b949e;
+}
+
+/*Grilla del formulario*/
+.terminal-contacto .contact-form{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 1.25rem;
+    row-gap: 1rem;
+    padding: 1.25rem 1.5rem 1.5rem;
+}
+.span-all{
+    grid-column: 1 / -1;
+}
+
+/*Cada campo*/
+.form-grup{
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+.form-grup label{
+    display: flex;
+    gap: 2px;
+    font-size: 0.78rem;
+    letter-spacing: 0.03em;
+    color: #7ee787;
+}
+.form-grup label::before{
+    content: "> ";
+    opacity: 0.55;
+}
+.form-grup:has([required]) label::after{
+    content: "*";
+    color: #ff7b72;
+    font-size: 0.75rem;
+}
+
+/*Campos de texto y área de mensaje*/
+.form-grup :is(input, textarea){
+    width: 100%;
+    padding: 0.65rem 0.75rem;
+    font-family: inherit;
+    font-size: 0.85rem;
+    color: #e6edf3;
+    background-color: #0a0d12;
+    border: 1px solid #2b3440;
+    border-radius: 6px;
+    caret-color: #4ee077;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-grup :is(input, textarea)::placeholder{
+    color: #5b6675;
+}
+.form-grup :is(input, textarea):focus{
+    border-color: #4ee077;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(78, 224, 107, 0.15);
+}
+.form-grup :is(input, textarea)::selection{
+    background-color: #4ee077;
+    color: #0b0f14;
+}
+.form-grup textarea{
+    min-height: 120px;
+    resize: vertical;
+    scrollbar-width: thin;
+    scrollbar-color: #4ee077 transparent;
+}
+
+/*Términos y condiciones*/
+.form-terms{
+    display: flex;
+    align-items: flex-start;
+    gap: 0.55rem;
+    font-size: 0.78rem;
+    color: #8b949e;
+}
+.form-terms input{
+    margin-top: 0.2rem;
+    accent-color: #4ee077;
+}
+.form-terms label{
+    cursor: pointer;
+}
+.form-terms a{
+    color: #4ee077;
+    text-decoration: underline dotted;
+}
+.form-terms a:hover{
+    text-decoration: underline;
+}
+
+/*Botón de envío*/
+.submit-btn{
+    padding: 0.75rem 1rem;
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #0b0f14;
+    background-color: #4ee077;
+    border: 1px solid #4ee077;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.submit-btn::before{
+    content: "$ ";
+    opacity: 0.55;
+}
+.submit-btn:hover{
+    background-color: #6ef08f;
+    box-shadow: 0 0 18px rgba(78, 224, 107, 0.35);
+}
+.submit-btn:active{
+    transform: translateY(1px);
+}
+.submit-btn:focus-visible{
+    outline: 2px solid #4ee077;
+    outline-offset: 3px;
+}
+
+/*Mensajes de éxito o error (para cuando se conecte el backend)*/
+#flas-messages{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    width: auto;
+}
+#flas-messages .alert{
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #ffffff;
+    border-radius: 5px;
+    animation: fade-in-out 5s forwards;
+}
+#flas-messages .alert.success{
+    background-color: #4caf50;
+}
+#flas-messages .alert.danger{
+    background-color: #f44336;
+}
+@keyframes fade-in-out{
+    0%{ opacity: 1; }
+    80%{ opacity: 1; }
+    100%{ opacity: 0; }
+}
+
+/* Celulares (Pantallas pequeñas, hasta 767px)*/
+@media (max-width: 767px){
+    .terminal-contacto .contact-header{
+        padding: 1rem 1rem 0.25rem;
+    }
+    .terminal-contacto .logo{
+        top: 0.9rem;
+        right: 1rem;
+        width: 44px;
+    }
+    .terminal-contacto .contact-subtitle{
+        max-width: 75%;
+    }
+    .terminal-contacto .contact-form{
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    .span-all{
+        grid-column: auto;
+    }
+}

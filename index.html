@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--Metadatos descriptivos para SEO y autor-->
+    <!--Metadatos descriptivos-->
     <meta name="description" 
         content="Portafolio de Jesus David Perez, Técnico Universitario en Programación (UTN) y estudiante de Ciberseguridad. Proyectos de desarrollo web y contacto.">
     <meta name="keywords" content="portafolio, desarrollador web, programador, proyectos, contacto">
@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="./css/proyecto.css">
     <link rel="stylesheet" href="./css/contacto.css">
     <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/formulario.css">
 
     <!--Aplica el tema guardado ANTES de pintar, para evitar el parpadeo-->
     <script>
@@ -27,7 +28,7 @@
             var sistemaOscuro = window.matchMedia("(prefers-color-scheme: dark)").matches;
             var tema = guardado || (sistemaOscuro ? "oscuro" : "claro");
             document.documentElement.setAttribute("data-tema", tema);
-        });
+        })();
     </script>
     
 </head>
@@ -60,7 +61,7 @@
                 <span class="comando">whoami</span>
                 <h2>Sobre Mí</h2>
                 <div class="contenido-sobremi">
-                    <img class="img-perfil" src="./assets/yo.jpeg" alt="fotografía de Jesus David Perez" width="200" height="200">
+                    <img class="img-perfil" src="./assets/Yo.jpeg" alt="fotografía de Jesus David Perez" width="200" height="200">
                     <div class="texto-sobremi">
                         <p>
                             <strong>Técnico Universitario en Programación</strong>, actualmente cursando en la Universidad Tecnológica Nacional (UTN) - FRSR, Argentina.
@@ -175,15 +176,7 @@ Asimismo, aporto versatilidad operando en distintas áreas de producción, ensam
                             Es un sistema de gestión de inventarios con funcionalidades de QR y lector de código de barras; el backend está implementado en Go, con base de datos en MySQL levantada en Docker, y frontend en HTML y JavaScript. Este proyecto fue realizado en equipo con mi amigo ambos estudiantes de la UTN San Rafael.
                         </p>
                         <div class="proyecto-botones">
-                            <a href="#" class="btn-proyecto">
-                                <!--Ícono: flecha "Ver más"-->
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                                    <path d="M7 17 17 7"></path>
-                                    <path d="M8 7h9v9"></path>
-                                </svg>
-                                <span>Ver más</span>
-                            </a>
-
+                            
                             <a href="https://github.com/FrancoCP12/CleanManager" target="_blank" rel="noopener" class="btn-proyecto">
                                 <!--Ícono: GitHub-->
                                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
@@ -224,21 +217,87 @@ Asimismo, aporto versatilidad operando en distintas áreas de producción, ensam
                 </div>
             </div>
         </section>
-
+        <!--Formulario de contacto-->
         <section id="contacto" class="contacto">
             <div class="container-contacto">
                 <span class="comando">./contacto</span>
                 <h2>Contacto</h2>
+
                 <div class="formulario-contacto">
+                    <div class="terminal-contacto">
+                        <div class="terminal-barra" aria-hidden="true">
+                            <span class="terminal-punto punto-rojo"></span>
+                            <span class="terminal-punto punto-amarillo"></span>
+                            <span class="terminal-punto punto-verde"></span>
+                            <span class="terminal-titulo">gsus@portfolio: ~/contacto</span>
+                        </div>
+
+                        <div class="contact-header">
+                            
+                            <h3 class="contact-title">Nueva consulta</h3>
+                            <p class="contact-subtitle">Me gustaría saber de ti. Por favor, completá el siguiente formulario.</p>
+                        </div>
+
+                        <form class="contact-form">
+                            <div class="form-grup">
+                                <label for="contacto-nombre">Nombre</label>
+                                <input id="contacto-nombre" name="nombre" type="text" placeholder="Tu nombre" autocomplete="given-name" required>
+                            </div>
+
+                            <div class="form-grup">
+                                <label for="contacto-apellido">Apellido</label>
+                                <input id="contacto-apellido" name="apellido" type="text" placeholder="Tu apellido" autocomplete="family-name" required>
+                            </div>
+
+                            <div class="form-grup">
+                                <label for="contacto-email">Correo electrónico</label>
+                                <input id="contacto-email" name="email" type="email" placeholder="ejemplo.123@gmail.com" autocomplete="email" required>
+                            </div>
+
+                            <div class="form-grup">
+                                <label for="contacto-telefono">Teléfono</label>
+                                <input id="contacto-telefono" name="telefono" type="tel" placeholder="+54 9 123 456-7890" autocomplete="tel" required>
+                            </div>
+
+                            <div class="form-grup span-all">
+                                <label for="contacto-mensaje">Mensaje</label>
+                                <textarea id="contacto-mensaje" name="mensaje" placeholder="Escribí tu mensaje..." required></textarea>
+                            </div>
+
+                            <div class="form-terms span-all">
+                                <input id="contacto-terminos" name="terminos" type="checkbox" required>
+                                <label for="contacto-terminos">
+                                    Al contactar, aceptás los <a href="#">términos y condiciones</a>
+                                </label>
+                            </div>
+
+                            <button class="submit-btn span-all" type="submit">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <div id="flas-messages" class="flas-messages"></div>
+    </main>
+
+        <!--<section id="contacto" class="contacto">
+            <div class="container-contacto">
+                <span class="comando">./contacto</span>
+                <h2>Contacto</h2>
+                <div class="formulario-contacto">
+                    
                     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSejiKxeG3fZpe1bWae4MSn5qNgZWW3hUZV867KBtiJ99mN-Vw/viewform?embedded=true" title="Formulario de contacto" loading="lazy">Cargando…</iframe>
+                    
                 </div>
             </div>
         </section> 
-    </main>
+    </main>-->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-info">
-                <p>&copy; 2026 Jesus David Perez. Todos los derechos reservados.</p>
+                <p><strong>📄 Este Portafolio fue revisado, sellado y aprobado por el Departamento de Burocracia de Git</strong></p>
+                <p><strong>N° de expediente: GIT-2026-003</strong> | Fecha de emisión: Hoy | Validez: Hasta el próximo commit --force</p>
             </div>
             <div class="footer-social">
                 <a href="https://www.instagram.com/gsus_0001/" target="_blank" rel="noopener" aria-label="Instagram">
@@ -264,6 +323,7 @@ Asimismo, aporto versatilidad operando en distintas áreas de producción, ensam
                     </svg>
                 </a>
             </div>
+            <p>&copy; 2026 Jesus David Perez. Todos los derechos reservados.</p>
         </div>    
     </footer>
 
@@ -302,7 +362,7 @@ Asimismo, aporto versatilidad operando en distintas áreas de producción, ensam
                     aplicar(e.matches ? "oscuro" : "claro", false);
                 }
             });
-        });
+        })(); //El () ejecuta la funcion de cambio de color
     </script>
 </body>
 
