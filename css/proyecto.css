@@ -76,6 +76,7 @@
     color: var(--acento-texto);
     border-radius: 5px;
     transition: background-color 0.2s, transform 0.2s;
+    border: none;    
 }
 .btn-proyecto svg{
     width: 18px;
