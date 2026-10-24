@@ -24,9 +24,27 @@
     --titulo-sombra: 0 2px 24px rgba(79, 140, 255, 0.35); /*resplandor azul sutil*/
 
     /*Estilo terminal*/
-    --comando-color: #4ee077;              /*verde tipo terminal*/
+    --comando-color: rgb(78, 224, 119);              /*verde tipo terminal*/
     --terminal-bg: rgba(255, 255, 255, 0.03);
     --terminal-borde: rgba(78, 224, 107, 0.25);
+
+    /*Formulario terminal de contacto*/
+    --form-bg: #0b0f14;                    /*fondo de la ventana de terminal*/
+    --form-barra-bg: #161b22;              /*barra superior de la terminal*/
+    --form-borde: rgba(78, 224, 107, 0.35);
+    --form-borde-suave: rgba(78, 224, 107, 0.2);
+    --form-brillo: rgba(78, 224, 107, 0.12); /*resplandor verde*/
+    --form-texto: #e6edf3;
+    --form-texto-tenue: #8b949e;
+    --form-campo-bg: #0a0d12;              /*fondo de los campos*/
+    --form-campo-borde: #2b3440;
+    --form-placeholder: #5b6675;
+    --form-verde: #4ee077;
+    --form-verde-suave: #7ee787;
+    --form-verde-hover: #6ef08f;
+    --form-verde-texto: #0b0f14;           /*texto sobre el botón verde*/
+    --form-rojo: #ff7b72;                  /*asterisco de campo obligatorio*/
+    --form-foco: rgba(78, 224, 107, 0.15); /*halo al enfocar un campo*/
 }
 
 :root[data-tema="claro"] {
@@ -53,9 +71,27 @@
     --acento-texto: #ffffff;
     --titulo-sombra: 0 2px 18px rgba(37, 99, 235, 0.2);
 
-    --comando-color: #1a8f3c;
+    --comando-color: rgb(9, 139, 46);
     --terminal-bg: rgba(0, 0, 0, 0.04);
     --terminal-borde: rgba(26, 143, 60, 0.25);
+
+    /*Formulario terminal de contacto en modo claro*/
+    --form-bg: #ffffff;
+    --form-barra-bg: #eef1f6;
+    --form-borde: rgba(26, 143, 60, 0.35);
+    --form-borde-suave: rgba(26, 143, 60, 0.2);
+    --form-brillo: rgba(26, 143, 60, 0.1);
+    --form-texto: #1c1c22;
+    --form-texto-tenue: #5c6270;
+    --form-campo-bg: #f7f9fc;
+    --form-campo-borde: #ccd2dc;
+    --form-placeholder: #8a919d;
+    --form-verde: #1a8f3c;
+    --form-verde-suave: #157a33;
+    --form-verde-hover: #147a32;
+    --form-verde-texto: #ffffff;
+    --form-rojo: #c62828;
+    --form-foco: rgba(26, 143, 60, 0.18);
 }
 
 /*Reset básico*/

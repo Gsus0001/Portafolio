@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="./css/contacto.css">
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/formulario.css">
+    <link rel="stylesheet" href="./css/terminosycondiciones.css">
 
     <!--Aplica el tema guardado ANTES de pintar, para evitar el parpadeo-->
     <script>
@@ -64,9 +65,9 @@
                     <img class="img-perfil" src="./assets/Yo.jpeg" alt="fotografía de Jesus David Perez" width="200" height="200">
                     <div class="texto-sobremi">
                         <p>
-                            <strong>Técnico Universitario en Programación</strong>, actualmente cursando en la Universidad Tecnológica Nacional (UTN) - FRSR, Argentina.
-                            Me apasiona programar y desarrollar soluciones de aplicaciones web originales y personalizadas; me gusta ser autodidacta en investigar y probar sistemas operativos.
-                            Aparte estoy estudiando una <strong>Diplomatura en Ciberseguridad</strong>, en la UTN - FRSR, Argentina, y de título secundario soy <strong>Técnico Electromecánico</strong>, egresado de la secundaria Ejército de los Andes 4-117 (Enet 1).
+                            ¡Holaa!, me presento, soy Jesus D. Perez estudiante de la <strong>Tecnicatura en Programación</strong>, en la UTN San Rafael, soy novato en todo esto, pero me gusta investigar,
+                            probar y tratar de solucionar el problema, entendiendo en el proceso, me llama la atención la ciberseguridad, es por ello que estoy estudiando a la vez que la TUP, una <strong>Diplomatura en Ciberseguridad</strong>, también en la UTN San Rafael. 
+                            Me gusta quemarme la cabeza descifrando sistemas operativos como Linux. Fan de las computadoras como asi tambien gamer de corazon, sin mas espero que te guste lo que ves por estos lados.
                         </p>
                     </div>
                 </div>
@@ -220,15 +221,17 @@ Asimismo, aporto versatilidad operando en distintas áreas de producción, ensam
         <!--Formulario de contacto-->
         <section id="contacto" class="contacto">
             <div class="container-contacto">
-                <span class="comando">./contacto</span>
+                <span class="comando">ls ~/contacto</span>
                 <h2>Contacto</h2>
 
                 <div class="formulario-contacto">
                     <div class="terminal-contacto">
-                        <div class="terminal-barra" aria-hidden="true">
-                            <span class="terminal-punto punto-rojo"></span>
-                            <span class="terminal-punto punto-amarillo"></span>
-                            <span class="terminal-punto punto-verde"></span>
+                        <div class="terminal-barra">
+                            <span class="terminal-puntos" aria-hidden="true">
+                                <span class="terminal-punto punto-rojo"></span>
+                                <span class="terminal-punto punto-amarillo"></span>
+                                <span class="terminal-punto punto-verde"></span>
+                            </span>
                             <span class="terminal-titulo">gsus@portfolio: ~/contacto</span>
                         </div>
 
@@ -239,6 +242,10 @@ Asimismo, aporto versatilidad operando en distintas áreas de producción, ensam
                         </div>
 
                         <form class="contact-form">
+                            <!--Campos trampa anti-spam: no los completes (uno para Formspree, otro para FormSubmit)-->
+                            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+                            <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+
                             <div class="form-grup">
                                 <label for="contacto-nombre">Nombre</label>
                                 <input id="contacto-nombre" name="nombre" type="text" placeholder="Tu nombre" autocomplete="given-name" required>
@@ -265,11 +272,20 @@ Asimismo, aporto versatilidad operando en distintas áreas de producción, ensam
                             </div>
 
                             <div class="form-terms span-all">
-                                <input id="contacto-terminos" name="terminos" type="checkbox" required>
-                                <label for="contacto-terminos">
-                                    Al contactar, aceptás los <a href="#">términos y condiciones</a>
-                                </label>
+                                <input id="contacto-terminos" name="terminos" type="checkbox">
+                                <label for="contacto-terminos">Acepto los términos y condiciones de uso</label>
                             </div>
+
+                            <!--Desplegable de términos y condiciones queda abierto mientras el usuario no acepta, y se oculta al aceptar.-->
+                            <details class="terminos-desplegable span-all" open>
+                                <summary class="enlace-terminos">Leer términos y condiciones</summary>
+                                <div class="contenido-terminos">
+                                    <h4>Términos y Condiciones de Uso</h4>
+                                    <p>
+                                        Los datos personales proporcionados en este formulario serán utilizados exclusivamente para responder a tus consultas de contacto. No serán compartidos ni transferidos a terceros.
+                                    </p>
+                                </div>
+                            </details>
 
                             <button class="submit-btn span-all" type="submit">Enviar</button>
                         </form>
@@ -281,23 +297,11 @@ Asimismo, aporto versatilidad operando en distintas áreas de producción, ensam
     <div id="flas-messages" class="flas-messages"></div>
     </main>
 
-        <!--<section id="contacto" class="contacto">
-            <div class="container-contacto">
-                <span class="comando">./contacto</span>
-                <h2>Contacto</h2>
-                <div class="formulario-contacto">
-                    
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSejiKxeG3fZpe1bWae4MSn5qNgZWW3hUZV867KBtiJ99mN-Vw/viewform?embedded=true" title="Formulario de contacto" loading="lazy">Cargando…</iframe>
-                    
-                </div>
-            </div>
-        </section> 
-    </main>-->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-info">
                 <p><strong>📄 Este Portafolio fue revisado, sellado y aprobado por el Departamento de Burocracia de Git</strong></p>
-                <p><strong>N° de expediente: GIT-2026-003</strong> | Fecha de emisión: Hoy | Validez: Hasta el próximo commit --force</p>
+                <p><strong>N° de expediente: GIT-2026-003 | Fecha de emisión: Hoy | Validez: Hasta el próximo commit --force</strong></p>
             </div>
             <div class="footer-social">
                 <a href="https://www.instagram.com/gsus_0001/" target="_blank" rel="noopener" aria-label="Instagram">
@@ -364,6 +368,9 @@ Asimismo, aporto versatilidad operando en distintas áreas de producción, ensam
             });
         })(); //El () ejecuta la funcion de cambio de color
     </script>
+
+    <!--Script del formulario de contacto-->
+    <script src="./js/contacto.js" defer></script>
 </body>
 
 </html>
