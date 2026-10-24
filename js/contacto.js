@@ -3,8 +3,14 @@ const CONFIG = {
     endpoint: 'https://formspree.io/f/xgaogddr',
 
     // Tiempo máximo de espera de la respuesta (ms)
-    tiempoLimite: 15000
+    tiempoLimite: 15000,
+
+    // Trampa de tiempo anti-spam: si el form se envía antes de esto, es un bot (ms)
+    tiempoMinimoEnPagina: 3000
 };
+
+/* Momento en que se cargó la página, para la trampa de tiempo */
+const paginaCargadaEn = Date.now();
 
 /* Muestra un aviso arriba de la pantalla (usa los estilos .alert del CSS)*/
 function mostrarAlerta(texto, tipo) {
@@ -46,6 +52,12 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
+        // Trampa de tiempo: los bots envían casi instantáneamente, las personas no
+        if (Date.now() - paginaCargadaEn < CONFIG.tiempoMinimoEnPagina) {
+            mostrarAlerta('Esperá un momento y volvé a intentar.', 'danger');
+            return;
+        }
+
         // Recoge los datos del formulario (incluye los campos trampa anti-spam)
         const datos = Object.fromEntries(new FormData(form));
         datos.terminos = form.terminos.checked;
@@ -79,6 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (!envioOk) {
                 const mensaje = (resultado.errors && resultado.errors[0] && resultado.errors[0].message)
+                    || resultado.error
                     || resultado.message
                     || 'No se pudo enviar el mensaje.';
                 throw new Error(mensaje);

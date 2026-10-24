@@ -242,9 +242,8 @@ Asimismo, aporto versatilidad operando en distintas áreas de producción, ensam
                         </div>
 
                         <form class="contact-form">
-                            <!--Campos trampa anti-spam: no los completes (uno para Formspree, otro para FormSubmit)-->
+                            <!--Campo trampa anti-spam de Formspree: no lo completes nunca-->
                             <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
-                            <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
 
                             <div class="form-grup">
                                 <label for="contacto-nombre">Nombre</label>
@@ -272,7 +271,7 @@ Asimismo, aporto versatilidad operando en distintas áreas de producción, ensam
                             </div>
 
                             <div class="form-terms span-all">
-                                <input id="contacto-terminos" name="terminos" type="checkbox">
+                                <input id="contacto-terminos" name="terminos" type="checkbox" required>
                                 <label for="contacto-terminos">Acepto los términos y condiciones de uso</label>
                             </div>
 
